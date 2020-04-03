@@ -1,8 +1,8 @@
-- name: Pricing
+- name: Purchase
   link: /pricing/
   new_window: false
-  highlight: false
-- name: Blog
+  highlight: true
+- name: Documentation
   link: /blog/
   new_window: false
   highlight: false
@@ -14,11 +14,3 @@
   link: /contact/
   new_window: false
   highlight: false
-- name: Login
-  link: /
-  new_window: true
-  highlight: false
-- name: Sign Up
-  link: /
-  new_window: true
-  highlight: true
