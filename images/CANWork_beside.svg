@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg width="100%" height="100%" viewBox="0 0 600 315" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-    <g transform="matrix(1,0,0,1,-50,-50)">
+<svg width="100%" height="100%" viewBox="0 0 1825 205" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-50,-45)">
         <g transform="matrix(1,0,0,1,-50,-50)">
             <g transform="matrix(0.778095,0,0,3.34422,-38.0872,-650.078)">
                 <ellipse cx="305.988" cy="254.193" rx="128.519" ry="29.902" style="fill:rgb(6,0,0);"/>
@@ -106,7 +106,7 @@
                 <rect x="172.29" y="176.081" width="456.847" height="23.071" style="fill:rgb(219,206,0);"/>
             </g>
         </g>
-        <g transform="matrix(1.01114,0,0,1.0364,-4.37597,-2.30868)">
+        <g transform="matrix(2.02227,0,0,2.07281,566.248,-489.617)">
             <text x="48.869px" y="352.34px" style="font-family:'HelveticaNeue-Bold', 'Helvetica Neue';font-weight:700;font-size:129.167px;">CANW<tspan x="443.344px 522.265px " y="352.34px 352.34px ">or</tspan>k</text>
         </g>
     </g>
