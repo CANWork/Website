@@ -51,25 +51,25 @@ faq:
   - question: I've got an esoteric support question you haven't answered here.
     answer: Send everything else here: <a href="#">mailto:support@canwork.dev</a>.
 ---
-<div class="plans">
-	{% for plan in page.product_table %}
-		<ul class="plan">
-			<li style="background: {{ plan.color }}">
-				<h3>{{ plan.name }}</h3>
+<div class="products">
+	{% for product in page.product_table %}
+		<ul class="product">
+			<li style="background: {{ product.color }}">
+				<h3>{{ product.name }}</h3>
 			</li>
-			{% for feature in plan.features %}
+			{% for feature in product.features %}
 				<li {% if feature.highlight %} class="highlighted"{% endif %}>{{ feature.text }}</li>
 			{% endfor %}
 
-			{% if plan.call_to_action %}
-				<li class="pricing-cta"><div class="button"><a style="background: {{ plan.color }}" href="{{ plan.call_to_action.link }}">{{ plan.call_to_action.text }} &rarr;</a></div></li>
+			{% if product.call_to_action %}
+				<li class="pricing-cta"><div class="button"><a style="background: {{ product.color }}" href="{{ product.call_to_action.link }}">{{ product.call_to_action.text }} &rarr;</a></div></li>
 			{% endif %}
 		</ul>
 	{% endfor %}
 </div>
 
 {% if page.faq %}
-	<h2>Pricing FAQ</h2>
+	<h2>Product FAQ</h2>
 	<dl class="faq">
 		{% for item in page.faq %}
 			<div>
