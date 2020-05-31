@@ -2,6 +2,7 @@
 title: Contact
 heading: Have questions?
 description: We will do everything we can to answer them.
+address: 1313 Mockingbird Lane, Durham, North Carolina
 ---
 
 
@@ -24,7 +25,7 @@ description: We will do everything we can to answer them.
 
 	<div class="contact-details">
 		<h3 class="editable">Address</h3>
-		<address><a target="_blank" href="https://www.google.com/maps/place/{{ page.map.address | url_encode }}">{{ page.map.address | replace: ", ", ", <br>" }}</a></address>
+		<address><a target="_blank" href="https://www.google.com/maps/place/{{ page.address | url_encode }}">{{ page.address | replace: ", ", ", <br>" }}</a></address>
 
 		<h3 class="editable">Email</h3>
 		<p><a href="mailto:support@example.com">support@example.com</a></p>
