@@ -58,7 +58,7 @@ faq:
 				<h3>{{ product.name }}</h3>
 			</li>
 			{% for feature in product.features %}
-				<li {% if feature.highlight %} class="highlighted"{% endif %}>{{ product.text }}</li>
+				<li {% if feature.highlight %} class="highlighted"{% endif %}>{{ feature.text }}</li>
 			{% endfor %}
 
 			{% if product.call_to_action %}
