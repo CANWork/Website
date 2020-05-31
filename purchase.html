@@ -41,16 +41,18 @@ product_table:
       text: Buy now!
 faq:
   - question: What types of payment do you accept?
-    answer: Credit cards including MasterCard, Visa or American Express.
-  - question: Can I change my plan at a later time?
-    answer: Yes, you can upgrade and downgrade your plan at anytime.
-  - question: Do you offer pricing for nonprofit organizations?
-    answer: Yes, send us a message and we'll set you up on our nonprofit pricing.
-  - question: Questions?
-    answer: Contact us for any further questions at <a href="#">john@business.com</a>.
+    answer: PayPal.  That's it.  Yeah, we're not huge fans either but it works for a lot of customers.
+  - question: Why does this cost what it does compared to other solutions?
+    answer: Because it's our product, we think it's worth it, and we think you will to.
+  - question: Why are you so snarky?
+    answer: I was raised on a diet of sarcasm and wit.
+  - question: Do you offer any educational pricing?
+    answer: No but if you're an FRC team then we can send you a special FRC invoice.
+  - question: I've got an esoteric support question you haven't answered here.
+    answer: Send everything else here: <a href="#">mailto:support@canwork.dev</a>.
 ---
 <div class="plans">
-	{% for plan in page.pricing_table %}
+	{% for plan in page.product_table %}
 		<ul class="plan">
 			<li style="background: {{ plan.color }}">
 				<h3>{{ plan.name }}</h3>
