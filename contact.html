@@ -3,6 +3,7 @@ title: Contact
 heading: Have questions?
 description: Send us an email. We will do everything we can to answer them.
 address: 1313 Mockingbird Lane, Durham, North Carolina
+email: support@canwork.dev
 ---
 
 
@@ -12,6 +13,6 @@ address: 1313 Mockingbird Lane, Durham, North Carolina
 		<address><a target="_blank" href="https://www.google.com/maps/place/{{ page.address | url_encode }}">{{ page.address | replace: ", ", ", <br>" }}</a></address>
 
 		<h3 class="editable">Email</h3>
-		<p><a href="mailto:support@canwork.dev">support@canwork.dev</a></p>
+		<p><a href="mailto:{{ page.email }}">{{ page.email }}</a></p>
 	</div>
 </div>
