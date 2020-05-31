@@ -1,28 +1,12 @@
 ---
 title: Contact
 heading: Have questions?
-description: We will do everything we can to answer them.
+description: Send us an email. We will do everything we can to answer them.
 address: 1313 Mockingbird Lane, Durham, North Carolina
 ---
 
 
 <div class="contact-box">
-	<form action="{{ site.baseurl }}/contact-success/" method="post" class="contact-form">
-		<input type="hidden" name="_to" value="support@example.com" />
-		<input type="text" name="_gotcha" style="display: none;">
-
-		<label for="name">Full Name</label>
-		<input type="text" name="name" id="name" placeholder="Enter your name..." />
-
-		<label for="email">Email Address</label>
-		<input type="email" name="email" id="email" placeholder="Enter your email..." required />
-
-		<label for="message">Message</label>
-		<textarea name="message" id="message" placeholder="Enter your message..."></textarea>
-
-		<input type="submit" value="Send Message" />
-	</form>
-
 	<div class="contact-details">
 		<h3 class="editable">Address</h3>
 		<address><a target="_blank" href="https://www.google.com/maps/place/{{ page.address | url_encode }}">{{ page.address | replace: ", ", ", <br>" }}</a></address>
