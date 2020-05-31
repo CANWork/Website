@@ -72,6 +72,7 @@ faq:
 <div class="products">
 	<h2>TEST2</h2>
 	{% for item in page.widget_table %}
+		<h2>{{ item.name }}</h2>
 		<ul class="product">
 			<li style="background: {{ item.color }}">
 				<h3>{{ item.name }}</h3>
