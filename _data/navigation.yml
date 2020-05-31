@@ -1,9 +1,9 @@
 - name: Purchase
-  link: /pricing/
+  link: /purchase/
   new_window: false
   highlight: true
 - name: Documentation
-  link: /blog/
+  link: /docs/
   new_window: false
   highlight: false
 - name: About
