@@ -7,12 +7,7 @@ email: support@canwork.dev
 ---
 
 
-<div class="contact-box">
-	<div class="contact-details">
-		<h3 class="editable">Address</h3>
-		<address><a target="_blank" href="https://www.google.com/maps/place/{{ page.address | url_encode }}">{{ page.address | replace: ", ", ", <br>" }}</a></address>
-
-		<h3 class="editable">Email</h3>
-		<p><a href="mailto:{{ page.email }}">{{ page.email }}</a></p>
-	</div>
+<div class="contact-details">
+	<h3 class="editable">Email</h3>
+	<p><a href="mailto:{{ page.email }}">{{ page.email }}</a></p>
 </div>
