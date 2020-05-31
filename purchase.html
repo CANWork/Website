@@ -2,7 +2,7 @@
 title: Purchase CANWork
 heading: Let CANWork work for you!
 description: These are the options you have available to purchase.
-widget_table: 
+producttable: 
   - name: CANWork
     color: "#225560"
     features:
@@ -70,8 +70,8 @@ faq:
     answer: Send everything else here: <a href="#">support@canwork.dev</a>.
 ---
 <div class="products">
-	<h2>TEST3</h2>
-	{% for item in page.widget_table %}
+	<h2>TEST4</h2>
+	{% for item in page.producttable %}
 		<h2>{{ item.name }}</h2>
 		<ul class="product">
 			<li style="background: {{ item.color }}">
