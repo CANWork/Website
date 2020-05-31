@@ -72,17 +72,17 @@ faq:
     answer: Send everything else here: <a href="#">mailto:support@canwork.dev</a>.
 ---
 <div class="products">
-	{% for product in page.product_table %}
+	{% for thing in page.product_table %}
 		<ul class="product">
-			<li style="background: {{ product.color }}">
+			<li style="background: {{ thing.color }}">
 				<h3>{{ product.name }}</h3>
 			</li>
-			{% for feature in product.features %}
-				<li {% if feature.highlight %} class="highlighted"{% endif %}>{{ feature.text }}</li>
+			{% for feature in thing.features %}
+				<li {% if feature.highlight %} class="highlighted"{% endif %}>{{ thing.text }}</li>
 			{% endfor %}
 
 			{% if product.call_to_action %}
-				<li class="pricing-cta"><div class="button"><a style="background: {{ product.color }}" href="{{ product.call_to_action.link }}">{{ product.call_to_action.text }} &rarr;</a></div></li>
+				<li class="pricing-cta"><div class="button"><a style="background: {{ thing.color }}" href="{{ thing.call_to_action.link }}">{{ thing.call_to_action.text }} &rarr;</a></div></li>
 			{% endif %}
 		</ul>
 	{% endfor %}
