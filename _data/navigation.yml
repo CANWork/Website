@@ -6,6 +6,10 @@
   link: /docs/
   new_window: false
   highlight: false
+- name: Firmware
+  link: /firmware/
+  new_window: false
+  highlight: false
 - name: About
   link: /about/
   new_window: false
