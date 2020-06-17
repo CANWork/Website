@@ -19,15 +19,16 @@
 
 header {
 	color: #fff;
-	padding: 20px 0;
-	background: $brand-color; /* Old browsers */
-	background: linear-gradient(to bottom, $brand-color 0%, $middle-gradient-color 100%) no-repeat $brand-color;
+	padding: 50px 0;
+	background: green; /* Old browsers */
+	background: linear-gradient(to top, blue 0%, orange 100%) no-repeat $brand-color;
 
 	a {
 		color: #fff;
 		text-decoration: none;
 		z-index: 1;
 		position: relative;
+		font: Helvetica;
 
 		&:hover {
 			text-decoration: none;
