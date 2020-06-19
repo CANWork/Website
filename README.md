@@ -1,9 +1,10 @@
 # To Do:
 
-Setup Google Analytics
-Setup Email
-Start documentation archive
-Fix firmware page
+* Setup Google Analytics
+* Setup Email
+* Start documentation archive
+* Fix firmware page
+* Create firmware
 
 ## Features
 
