@@ -5,6 +5,7 @@
 * Start documentation archive
 * Fix firmware page
 * Create firmware
+* Setup shop pages
 
 ## Features
 
