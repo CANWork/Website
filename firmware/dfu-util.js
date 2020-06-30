@@ -232,7 +232,7 @@ var device = null;
 
         let searchParams = new URLSearchParams(window.location.search);
         let fromLandingPage = false;
-        let vid = 0;
+        let vid = 0x0483;
         // Set the vendor ID from the landing page URL
         if (searchParams.has("vid")) {
             const vidString = searchParams.get("vid");
@@ -463,9 +463,9 @@ var device = null;
             );
         }
 
-        vidField.addEventListener("change", function() {
-            vid = parseInt(vidField.value, 16);
-        });
+        //vidField.addEventListener("change", function() {
+        //    vid = parseInt(vidField.value, 16);
+        //});
 
         //transferSizeField.addEventListener("change", function() {
         //    transferSize = parseInt(transferSizeField.value);
