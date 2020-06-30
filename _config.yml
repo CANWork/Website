@@ -68,6 +68,11 @@ defaults:
       path: "contact.html"
     values:
       full_width: true
+  -
+    scope:
+      path: "firmware/index.html"
+    values:
+      layout: "default"
 
 jekyll-archives:
   enabled:
