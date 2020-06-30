@@ -467,9 +467,9 @@ var device = null;
             vid = parseInt(vidField.value, 16);
         });
 
-        transferSizeField.addEventListener("change", function() {
-            transferSize = parseInt(transferSizeField.value);
-        });
+        //transferSizeField.addEventListener("change", function() {
+        //    transferSize = parseInt(transferSizeField.value);
+        //});
 
         dfuseStartAddressField.addEventListener("change", function(event) {
             const field = event.target;
