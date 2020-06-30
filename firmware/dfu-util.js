@@ -263,7 +263,7 @@ var device = null;
         let configForm = document.querySelector("#configForm");
 
         let transferSizeField = document.querySelector("#transferSize");
-        let transferSize = parseInt(transferSizeField.value);
+        let transferSize = 1024;
 
         let dfuseStartAddressField = document.querySelector("#dfuseStartAddress");
         let dfuseUploadSizeField = document.querySelector("#dfuseUploadSize");
