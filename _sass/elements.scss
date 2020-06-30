@@ -1,5 +1,6 @@
 html {
-	background: #2b2b40;
+	background: green; /* Old browsers */
+	background: linear-gradient(to bottom, SeaGreen 0%, DarkGreen 100%) no-repeat $brand-color;
 }
 
 html, body {
