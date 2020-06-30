@@ -24,6 +24,7 @@ description: Update your firmware with a Chrome Browser
     </div>
   </div>
 </section>
+
 <section>
   <div class="container">
     <p>
@@ -64,8 +65,7 @@ description: Update your firmware with a Chrome Browser
           <input type="number" name="dfuseUploadSize" id="dfuseUploadSize" min="1"/>
         </div>
       
-        <legend>DFU mode</legend>
-        <fieldset>
+       
           <legend>Firmware Download (write to USB device)</legend>
           <p>
             <input type="file" id="firmwareFile" name="file" disabled="true"/>
@@ -74,9 +74,23 @@ description: Update your firmware with a Chrome Browser
             <button id="download" disabled="true">Download</button>
           </p>
           <div class="log" id="downloadLog"></div>
-        </fieldset>
+        
       </form>
     </fieldset>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <legend>Firmware Download (write to USB device)</legend>
+    <p>
+      <input type="file" id="firmwareFile" name="file" disabled="true"/>
+    </p>
+    <p>
+      <button id="download" disabled="true">Download</button>
+    </p>
+    <div class="log" id="downloadLog"></div>
+
     <div class="text editable">
       <h2>Sources and Links</h2>
       <p>This site is based on this project[insert link].</p>
