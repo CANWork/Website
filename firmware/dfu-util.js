@@ -449,7 +449,7 @@ var device = null;
                     }
 
                     if (matching_devices.length == 0) {
-                        statusDisplay.textContent = 'No CANWork found.';
+                        statusDisplay.textContent = 'CANWork not auto-detected.';
                     } else {
                         if (matching_devices.length == 1) {
                             statusDisplay.textContent = 'Connecting...';
@@ -457,7 +457,7 @@ var device = null;
                             console.log(device);
                             device = await connect(device);
                         } else {
-                            statusDisplay.textContent = "Auto-Detected CANWork";
+                            statusDisplay.textContent = "CANWork auto-detected.";
                         }
                         vid = matching_devices[0].device_.vendorId;
                     }
