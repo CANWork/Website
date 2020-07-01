@@ -267,6 +267,7 @@ var device = null;
         //let transferSizeField = document.querySelector("#transferSize");
         let transferSize = 1024;
         let startAddress = 0x8000000;
+        let maxUploadSize = 0;  //This is overwritten later with the read size from the device
 
         //let dfuseStartAddressField = document.querySelector("#dfuseStartAddress");
         //let dfuseUploadSizeField = document.querySelector("#dfuseUploadSize");
