@@ -244,7 +244,7 @@ var device = null;
                 } else {
                     vid = parseInt(vidString, 10);
                 }
-                vidField.value = "0x" + hex4(vid).toUpperCase();
+                //vidField.value = "0x" + hex4(vid).toUpperCase();
                 fromLandingPage = true;
             } catch (error) {
                 console.log("Bad VID " + vidString + ":" + error);
@@ -271,6 +271,7 @@ var device = null;
         //let dfuseStartAddressField = document.querySelector("#dfuseStartAddress");
         //let dfuseUploadSizeField = document.querySelector("#dfuseUploadSize");
 
+        let firmwarePathField = document.querySelector("#firmwarePath");
         //let firmwareFileField = document.querySelector("#firmwareFile");
         let firmwareFile = null;
 
@@ -286,13 +287,13 @@ var device = null;
                 statusDisplay.textContent = reason;
             }
 
-            connectButton.textContent = "Connect";
+            connectButton.textContent = "Connect and Download Firmware";
             infoDisplay.textContent = "";
             dfuDisplay.textContent = "";
-            detachButton.disabled = true;
+            /*detachButton.disabled = true;
             uploadButton.disabled = true;
             downloadButton.disabled = true;
-            firmwareFileField.disabled = true;
+            firmwareFileField.disabled = true;*/
         }
 
         function onUnexpectedDisconnect(event) {
@@ -326,9 +327,16 @@ var device = null;
             if (desc && Object.keys(desc).length > 0) {
                 device.properties = desc;
                 let info = `WillDetach=${desc.WillDetach}, ManifestationTolerant=${desc.ManifestationTolerant}, CanUpload=${desc.CanUpload}, CanDnload=${desc.CanDnload}, TransferSize=${desc.TransferSize}, DetachTimeOut=${desc.DetachTimeOut}, Version=${hex4(desc.DFUVersion)}`;
+                
+                /*
                 dfuDisplay.textContent += "\n" + info;
                 transferSizeField.value = desc.TransferSize;
                 transferSize = desc.TransferSize;
+                */
+
+                //Force the start address
+                device.startAddress = parseInt(startAddress, 16);
+
                 if (desc.CanDnload) {
                     manifestationTolerant = desc.ManifestationTolerant;
                 }
@@ -387,6 +395,8 @@ var device = null;
             // Display basic USB information
             statusDisplay.textContent = '';
             connectButton.textContent = 'Disconnect';
+
+            /*
             infoDisplay.textContent = (
                 "Name: " + device.device_.productName + "\n" +
                 "MFG: " + device.device_.manufacturerName + "\n" +
@@ -410,27 +420,84 @@ var device = null;
                 downloadButton.disabled = false;
                 firmwareFileField.disabled = false;
             }
+            */
 
             if (device.memoryInfo) {
+                /*
                 let dfuseFieldsDiv = document.querySelector("#dfuseFields")
                 dfuseFieldsDiv.hidden = false;
                 dfuseStartAddressField.disabled = false;
                 dfuseUploadSizeField.disabled = false;
+                */
                 let segment = device.getFirstWritableSegment();
                 if (segment) {
                     device.startAddress = segment.start;
-                    dfuseStartAddressField.value = "0x" + segment.start.toString(16);
+                    //dfuseStartAddressField.value = "0x" + segment.start.toString(16);
                     const maxReadSize = device.getMaxReadSize(segment.start);
-                    dfuseUploadSizeField.value = maxReadSize;
-                    dfuseUploadSizeField.max = maxReadSize;
+                    //dfuseUploadSizeField.value = maxReadSize;
+                    //dfuseUploadSizeField.max = maxReadSize;
+                    maxUploadSize = maxReadSize;
                 }
-            } else {
+            } 
+            /*
+            else {
                 let dfuseFieldsDiv = document.querySelector("#dfuseFields")
                 dfuseFieldsDiv.hidden = true;
                 dfuseStartAddressField.disabled = true;
                 dfuseUploadSizeField.disabled = true;
             }
+            */
 
+           let firmwarePath = firmwarePathField.options[firmwarePathField.selectedIndex].value;
+
+            // Download binary file to memory
+            var req = new XMLHttpRequest();
+            req.open('GET', firmwarePath, true);
+            req.responseType = "blob";
+               
+            req.onload = async function(oEvent) {
+   
+                let reader = new FileReader();
+                reader.onload = async function() {
+                    firmwareFile = reader.result;
+                    if (device && firmwareFile != null) {
+                        setLogContext(downloadLog);
+                        clearLog(downloadLog);
+                        try {
+                            let status = await device.getStatus();
+                            if (status.state == dfu.dfuERROR) {
+                                await device.clearStatus();
+                            }
+                        } 
+                        catch (error) {
+                            device.logWarning("Failed to clear status");
+                        }
+                        await device.do_download(transferSize, firmwareFile, manifestationTolerant).then(
+                            () => {
+                            logInfo("The CANWork has been updated. To utilize the new firmware, please disconnect and recconect it.");
+                            setLogContext(null);
+                            if (!manifestationTolerant) {
+                                device.waitDisconnected(5000).then(
+                                    dev => {
+                                        onDisconnect();
+                                        device = null;
+                                    },
+                                    error => {
+                                        console.log("CANWork did not initialize correctly.  Please disconnect and try again.");
+                                    }
+                                );
+                            }
+                            },
+                            error => {
+                                logError(error);
+                                setLogContext(null);
+                            }
+                        )
+                    }
+                };
+                reader.readAsArrayBuffer(req.response);
+            };
+            req.send();
             return device;
         }
 
