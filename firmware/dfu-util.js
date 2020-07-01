@@ -457,7 +457,7 @@ var device = null;
                             console.log(device);
                             device = await connect(device);
                         } else {
-                            statusDisplay.textContent = "Detected CANWork";
+                            statusDisplay.textContent = "Auto-Detected CANWork";
                         }
                         vid = matching_devices[0].device_.vendorId;
                     }
