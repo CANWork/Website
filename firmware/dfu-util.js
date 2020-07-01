@@ -502,7 +502,7 @@ var device = null;
             navigator.usb.addEventListener("disconnect", onUnexpectedDisconnect);
             // Try connecting automatically
             if (fromLandingPage) {
-                autoConnect(vid, serial);
+                autoConnect(parseInt(vidString, 16), serial);
             }
         } else {
             statusDisplay.textContent = 'WebUSB not available.'
