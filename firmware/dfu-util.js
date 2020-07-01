@@ -264,13 +264,14 @@ var device = null;
 
         let configForm = document.querySelector("#configForm");
 
-        let transferSizeField = document.querySelector("#transferSize");
+        //let transferSizeField = document.querySelector("#transferSize");
         let transferSize = 1024;
+        let startAddress = 0x8000000;
 
-        let dfuseStartAddressField = document.querySelector("#dfuseStartAddress");
-        let dfuseUploadSizeField = document.querySelector("#dfuseUploadSize");
+        //let dfuseStartAddressField = document.querySelector("#dfuseStartAddress");
+        //let dfuseUploadSizeField = document.querySelector("#dfuseUploadSize");
 
-        let firmwareFileField = document.querySelector("#firmwareFile");
+        //let firmwareFileField = document.querySelector("#firmwareFile");
         let firmwareFile = null;
 
         let downloadLog = document.querySelector("#downloadLog");
@@ -465,13 +466,14 @@ var device = null;
             );
         }
 
-        //vidField.addEventListener("change", function() {
-        //    vid = parseInt(vidField.value, 16);
-        //});
+        /*
+        vidField.addEventListener("change", function() {
+            vid = parseInt(vidField.value, 16);
+        });
 
-        //transferSizeField.addEventListener("change", function() {
-        //    transferSize = parseInt(transferSizeField.value);
-        //});
+        transferSizeField.addEventListener("change", function() {
+            transferSize = parseInt(transferSizeField.value);
+        });
 
         dfuseStartAddressField.addEventListener("change", function(event) {
             const field = event.target;
@@ -490,6 +492,7 @@ var device = null;
                 field.setCustomValidity("");
             }
         });
+        */
 
         connectButton.addEventListener('click', function() {
             if (device) {
