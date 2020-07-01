@@ -26,23 +26,16 @@ description: Update your firmware with a Chrome Browser
 </section>
 
 <section>
-  <div class="container">
-    <button id="connect">Connect to CANWork</button>
-    <dialog id="interfaceDialog">
-      Your device has multiple DFU interfaces. Select one from the list below:
-      <form id="interfaceForm" method="dialog">
-        <button id="selectInterface" type="submit">Select interface</button>
-      </form>
-    </dialog>
-
-    <legend>Firmware Download (write to USB device)</legend>
+    <legend>Firmware Download (Connect and write to USB device)</legend>
     <p>
-      <input type="file" id="firmwareFile" name="file" disabled="true"/>
+      <select id="firmware_path">
+        <option value="/firmware/binaryFiles/slcan.bin">slcan</option>
+        <option value="/firmware/binaryFiles/candlelight.bin">candlelight</option>
+      </select>
     </p>
-    <p>
-      <button id="download" disabled="true">Download</button>
-    </p>
+    <button id="connect">Connect and Download Firmware</button>
     <div class="log" id="downloadLog"></div>
+    <span id="status"></span>
   </div>
 </section>
 
