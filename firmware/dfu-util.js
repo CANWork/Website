@@ -75,7 +75,6 @@ var device = null;
             // Manually retrieve the interface name string descriptors
             let tempDevice = new dfu.Device(device_, interfaces[0]);
             await tempDevice.device_.open();
-            //await tempDevice.device_.selectConfiguration(1);
             let mapping = await tempDevice.readInterfaceNames();
             await tempDevice.close();
 
@@ -234,18 +233,18 @@ var device = null;
         //Force the vidstring for STM Micro VID
         let vidString = "0x0483";
         // Set the vendor ID from the landing page URL
-        if (searchParams.has("vid")) {
-            try {
-                if (vidString.toLowerCase().startsWith("0x")) {
-                    vid = parseInt(vidString, 16);
-                } else {
-                    vid = parseInt(vidString, 10);
-                }
-                fromLandingPage = true;
-            } catch (error) {
-                console.log("Bad VID " + vidString + ":" + error);
+        //if (searchParams.has("vid")) {
+        try {
+            if (vidString.toLowerCase().startsWith("0x")) {
+                vid = parseInt(vidString, 16);
+            } else {
+                vid = parseInt(vidString, 10);
             }
+            fromLandingPage = true;
+        } catch (error) {
+            console.log("Bad VID " + vidString + ":" + error);
         }
+        //}
 
         // Grab the serial number from the landing page
         let serial = "";
