@@ -75,7 +75,7 @@ var device = null;
             // Manually retrieve the interface name string descriptors
             let tempDevice = new dfu.Device(device_, interfaces[0]);
             await tempDevice.device_.open();
-            await tempDevice.device_.selectConfiguration(1);
+            //await tempDevice.device_.selectConfiguration(1);
             let mapping = await tempDevice.readInterfaceNames();
             await tempDevice.close();
 
@@ -221,7 +221,7 @@ var device = null;
         let connectButton = document.querySelector("#connectDownload");
         //let detachButton = document.querySelector("#detach");
         //let downloadButton = document.querySelector("#download");
-        //let uploadButton = document.querySelector("#upload");
+        let uploadButton = document.querySelector("#upload");
         let statusDisplay = document.querySelector("#status");
         let infoDisplay = document.querySelector("#usbInfo");
         let dfuDisplay = document.querySelector("#dfuInfo");
@@ -512,12 +512,13 @@ var device = null;
                                 matching_devices.push(dfu_device);
                             }
                         } else if (dfu_device.device_.vendorId == vid) {
+                            console.log("Found matching VID device: " + vid + " s/n " + dfu_device.device_.serialNumber);
                             matching_devices.push(dfu_device);
                         }
                     }
 
                     if (matching_devices.length == 0) {
-                        statusDisplay.textContent = 'No device found.';
+                        statusDisplay.textContent = 'No CANWork found.';
                     } else {
                         if (matching_devices.length == 1) {
                             statusDisplay.textContent = 'Connecting...';
@@ -525,9 +526,9 @@ var device = null;
                             console.log(device);
                             device = await connect(device);
                         } else {
-                            statusDisplay.textContent = "Multiple DFU interfaces found.";
+                            statusDisplay.textContent = "Detected CANWork";
                         }
-                        vidField.value = "0x" + hex4(matching_devices[0].device_.vendorId).toUpperCase();
+                        //vidField.value = "0x" + hex4(matching_devices[0].device_.vendorId).toUpperCase();
                         vid = matching_devices[0].device_.vendorId;
                     }
                 }
@@ -584,7 +585,8 @@ var device = null;
                             device = await connect(new dfu.Device(selectedDevice, interfaces[0]));
                         } else {
                             await fixInterfaceNames(selectedDevice, interfaces);
-                            populateInterfaceList(interfaceForm, selectedDevice, interfaces);
+                            device = await connect(new dfu.Device(selectedDevice, interfaces[0]));
+                            /*populateInterfaceList(interfaceForm, selectedDevice, interfaces);
                             async function connectToSelectedInterface() {
                                 interfaceForm.removeEventListener('submit', this);
                                 const index = interfaceForm.elements["interfaceIndex"].value;
@@ -599,6 +601,7 @@ var device = null;
                             });
 
                             interfaceDialog.showModal();
+                            */
                         }
                     }
                 ).catch(error => {
