@@ -218,10 +218,10 @@ var device = null;
     }
 
     document.addEventListener('DOMContentLoaded', event => {
-        let connectButton = document.querySelector("#connect");
-        let detachButton = document.querySelector("#detach");
-        let downloadButton = document.querySelector("#download");
-        let uploadButton = document.querySelector("#upload");
+        let connectButton = document.querySelector("#connectDownload");
+        //let detachButton = document.querySelector("#detach");
+        //let downloadButton = document.querySelector("#download");
+        //let uploadButton = document.querySelector("#upload");
         let statusDisplay = document.querySelector("#status");
         let infoDisplay = document.querySelector("#usbInfo");
         let dfuDisplay = document.querySelector("#dfuInfo");
@@ -232,10 +232,12 @@ var device = null;
 
         let searchParams = new URLSearchParams(window.location.search);
         let fromLandingPage = false;
-        let vid = 0x0483;
+        let vid = 0;
+        //Force the vidstring for STM Micro VID
+        let vidString = "0x0483";
         // Set the vendor ID from the landing page URL
         if (searchParams.has("vid")) {
-            const vidString = searchParams.get("vid");
+            //const vidString = searchParams.get("vid");
             try {
                 if (vidString.toLowerCase().startsWith("0x")) {
                     vid = parseInt(vidString, 16);
