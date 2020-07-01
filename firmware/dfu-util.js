@@ -301,7 +301,7 @@ var device = null;
             if (device !== null && device.device_ !== null) {
                 if (device.device_ === event.device) {
                     device.disconnected = true;
-                    onDisconnect("Device disconnected");
+                    onDisconnect("Have a nice day!");  //Device disconnected message
                     device = null;
                 }
             }
