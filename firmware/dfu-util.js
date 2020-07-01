@@ -539,6 +539,7 @@ var device = null;
             }
         });
 
+        /*
         detachButton.addEventListener('click', function() {
             if (device) {
                 device.detach().then(
@@ -620,6 +621,7 @@ var device = null;
                 reader.readAsArrayBuffer(file);
             }
         });
+        */
 
         downloadButton.addEventListener('click', async function(event) {
             event.preventDefault();
