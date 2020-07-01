@@ -621,7 +621,6 @@ var device = null;
                 reader.readAsArrayBuffer(file);
             }
         });
-        */
 
         downloadButton.addEventListener('click', async function(event) {
             event.preventDefault();
@@ -668,6 +667,7 @@ var device = null;
 
             //return false;
         });
+        */
 
         // Check if WebUSB is available
         if (typeof navigator.usb !== 'undefined') {
