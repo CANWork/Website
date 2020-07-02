@@ -406,7 +406,7 @@ var device = null;
                         }
                         await device.do_download(transferSize, firmwareFile, manifestationTolerant).then(
                             () => {
-                            logInfo("The CANWork has been updated. To utilize the new firmware, please disconnect and recconect it.");
+                            logInfo("The CANWork has been updated. To utilize the new firmware, please disconnect and recconect the CANWork.");
                             setLogContext(null);
                             if (!manifestationTolerant) {
                                 device.waitDisconnected(5000).then(
