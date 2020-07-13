@@ -29,14 +29,14 @@ Connect your CANWork to your host devices USB port with a USB-C cable. Make sure
 **Basic Troubleshooting**
 
 PWR/Tx LED:
-  Bootloader: Always OFF
-  Slcan:
-  Candlelight:
+  - Bootloader: Always OFF
+  - Slcan:
+  - Candlelight:
 
 Rx LED:
-  Bootloader: Always OFF
-  Slcan:
-  Candlelight:
+  - Bootloader: Always OFF
+  - Slcan:
+  - Candlelight:
 
 CANH:  
   wire color is typically yellow
