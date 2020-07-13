@@ -5,7 +5,7 @@ categories:
   - Tutorials
 author_staff_member: CANWorkSupport
 ---
-The CANWork provides a socketCAN-compatible interface that can be brought up with slcand. This allows you to use all standard Linux CAN utilities like candump, cansniffer, and even wireshark. 
+**Linux Only:** The CANWork provides a socketCAN-compatible interface that can be brought up with slcand. This allows you to use all standard Linux CAN utilities like candump, cansniffer, and even wireshark. 
 
 Bus speed is specified with the "-s" parameter where:
 -s0 = 10k
