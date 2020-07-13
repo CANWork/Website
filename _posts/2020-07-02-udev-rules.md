@@ -5,6 +5,8 @@ categories:
   - Tutorials
 author_staff_member: CANWorkSupport
 ---
+If you are using multiple CANWork devices with the candleLight, this helps you keep their USB IDs organized.
+
 ## Linux Only
 
 If you are using multiple CANWork devices with the candleLight firmware, you may want to use udev rules to assign each serial number a fixed socketcan device name (can0, can1, etc) that persists between reboots and plugging/unplugging the device. This is easy with udev rules.
