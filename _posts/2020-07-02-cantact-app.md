@@ -5,12 +5,13 @@ categories:
   - Tutorials
 author_staff_member: CANWorkSupport
 ---
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+**Windows and OSX:** cantact-app is the easiest way to get up and running with your CANWork on Windows and Mac.
+ 
+The [cantact-app](https://github.com/linklayer/cantact-app) is a Java program for viewing real-time CAN bus traffic and sending CAN packets. This tool connects directly to the virtual serial port of the CANable (or CANtact) device, and doesn't require any other drivers. 
+
+Just [download](https://github.com/linklayer/cantact-app/releases/download/v0.3.0-alpha/cantact-v0.3.0-alpha.zip) the latest release, connect to your CANWork, and traffic should show up shortly.
+Note: cantact-app runs on Linux but currently isn't able to discover serial ports.
+
 
 ![Cat](https://source.unsplash.com/random/1500x1146)
 
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-
-## Subtitle here
-
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.

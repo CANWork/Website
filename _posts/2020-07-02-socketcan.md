@@ -5,12 +5,18 @@ categories:
   - Tutorials
 author_staff_member: CANWorkSupport
 ---
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+**Linux Only:** The CANWork provides a socketCAN-compatible interface that can be brought up with slcand. This allows you to use all standard Linux CAN utilities like candump, cansniffer, and even wireshark. 
 
-![Cat](https://source.unsplash.com/random/1500x1146)
+Bus speed is specified with the "-s" parameter where:
+-s0 = 10k
+-s1 = 20k
+-s2 = 50k
+-s3 = 100k
+-s4 = 125k
+-s5 = 250k
+-s6 = 500k
+-s7 = 750k
+-s8 = 1M
 
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+Just run slcand with the proper arguments (????????) for your bus speed, and a new CAN device should show up on your system. Don't forget to bring the interface up with ifconfig after running slcand! Now you can use any of the standard Linux CAN utilities to interact with the bus. Make sure that you specify the right TTY port, which you can check with the dmesg command after plugging in your CANWork.
 
-## Subtitle here
-
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
