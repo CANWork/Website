@@ -1,16 +1,30 @@
 ---
 date: 2020-07-02
-title: Udev Rules
+title: Keeping Multiple CANWorks Straight
 categories:
   - Tutorials
 author_staff_member: CANWorkSupport
 ---
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+## Linux Only
 
-![Cat](https://source.unsplash.com/random/1500x1146)
+If you are using multiple CANWork devices with the candleLight firmware, you may want to use udev rules to assign each serial number a fixed socketcan device name (can0, can1, etc) that persists between reboots and plugging/unplugging the device. This is easy with udev rules.
 
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+First, create a new udev rule file such as: /etc/udev/rules.d/99-candlelight.rules
 
-## Subtitle here
+This file will contain your rule. Place the serial number of your device (check dmesg after plugging it in, or use the usb-devices command) and desired device name in this file. No other values need to be changed. Add a line to this file for each device you would like to configure. 
 
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+SUBSYSTEM=="net", ATTRS{idVendor}=="1d50", ATTRS{idProduct}=="606f", ATTRS{serial}=="000C8005574D430A20333735", NAME="can5"
+SUBSYSTEM=="net", ATTRS{idVendor}=="1d50", ATTRS{idProduct}=="606f", ATTRS{serial}=="000D8005574D430A20333735", NAME="can6"
+SUBSYSTEM=="net", ATTRS{idVendor}=="1d50", ATTRS{idProduct}=="606f", ATTRS{serial}=="000E8005574D430A20333735", NAME="can7"
+
+It is a good idea to set the device name to can3 and higher, as devices without udev rules will still enumerate as can0, can1, etc.
+ 
+Reboot your system or run the following commands and unplug/replug your device and the udev rule will assign the interface number after enumeration.
+sudo udevadm control --reload-rules && sudo systemctl restart systemd-udevd && sudo udevadm trigger
+
+
+## Windows
+Windows enumerates as device 0,1,2....
+
+## OSX
+TBD
