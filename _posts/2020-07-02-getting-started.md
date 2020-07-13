@@ -39,15 +39,15 @@ Rx LED:
   - Candlelight:
 
 CANH:  
-  wire color is typically yellow
-  DB9 pin 7 
+  - wire color is typically yellow
+  - DB9 pin 7 
 
 CANL:
-  wire color is typically green
-  DB9 pin 2
+  - wire color is typically green
+  - DB9 pin 2
   
 CAN bus speeds:
-  OBD and cars typically 500k
-  Heavy-duty trucks and J1939 are 250k
+  - OBD and automobiles typically 500k
+  - Heavy-duty trucks and J1939 are 250k
   
   
