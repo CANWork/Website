@@ -28,15 +28,19 @@ Connect your CANWork to your host devices USB port with a USB-C cable. Make sure
 
 **Basic Troubleshooting**
 
-PWR/Tx LED:
+PWR/Tx LED (green):
   - Bootloader: Always OFF
-  - Slcan:
-  - Candlelight:
+  - Slcan: ON with power
+  - Candlelight:  
+      Blinks 4x at power up, then off until Cangaroo is active
+      Blinks on transmit
 
-Rx LED:
+Rx LED(yellow):
   - Bootloader: Always OFF
-  - Slcan:
+  - Slcan: Blinks twice at power up
   - Candlelight:
+      Blinks 4x at power up, then stays on until Cangaroo is active
+      Blinks on receive
 
 CANH:  
   - wire color is typically yellow
